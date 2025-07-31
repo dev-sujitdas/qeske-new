@@ -32,7 +32,7 @@ const lenisRef = useRef(null);
 
   return (
     <>
-    {/* <Navbar/> */}
+    <Navbar/>
     <Hero/>
     <Workspace/>
     <Location/>
