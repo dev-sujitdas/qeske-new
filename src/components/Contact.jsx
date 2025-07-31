@@ -28,13 +28,13 @@ const Contact = () => {
   const getCircleSize = () => {
     if (isLarge) return "2.5rem";
     if (isMedium) return "2rem";
-    return "1.5rem";
+    return "1.8rem";
   };
 
   const getTitleSize = ()=>{
     if(isLarge) return "1.125rem";
     if (isMedium) return "1rem";
-    return "0.875rem";
+    return "1rem";
   }
 
 
@@ -81,7 +81,7 @@ const Contact = () => {
       ref={contactRef}
       className="w-full h-auto xl:h-screen bg-[#ece8e8] flex md:flex-row flex-col "
     >
-      <div className="w-full lg:w-1/2 lg:h-[35rem] xl:h-full relative overflow-hidden">
+      <div className="w-full h-[22rem] md:h-[32rem] lg:w-1/2 lg:h-[35rem] xl:h-full relative overflow-hidden">
         <div ref={scrollRef} className="absolute inset-0">
           <img
             src={contactImage}
@@ -107,9 +107,9 @@ const Contact = () => {
           </h3>
         </div>
 
-        <div className="flex flex-col justify-center items-center md:mt-10 xl:mt-20">
-          <div className="w-[60%]">
-            <form action="" className="flex flex-col w-full gap-5 mb-5">
+        <div className="flex flex-col justify-center items-center mt-5 md:mt-10 xl:mt-20">
+          <div className="w-full lg:w-[60%]">
+            <form action="" className="flex flex-col w-full gap-3 lg:gap-5 mb-5">
               <input
                 className="px-3 py-2 bg-white rounded-lg md:text-base 2xl:text-xl"
                 type="text"

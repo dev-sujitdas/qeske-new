@@ -75,7 +75,7 @@ const marqueeData = [
     subtitle: "Connect. Unwind. Collaborate.",
     description: (
       <>
-        A relaxed hub where good food, great conversations, <br /> and creative
+        A relaxed hub where good food, great <br />conversations, and creative
         minds come together."
       </>
     ),
@@ -87,7 +87,7 @@ const marqueeData = [
     subtitle: "Create. Shape. Inspire.",
     description: (
       <>
-        A creative zone where design minds bring concepts <br /> to life and
+        A creative zone where design minds bring <br />concepts to life and
         ideas take shape.
       </>
     ),
@@ -123,7 +123,7 @@ const marqueeData = [
     subtitle: "Weave. Share. Create.",
     description: (
       <>
-        A collaborative space where different ideas connect, <br /> experiment,
+        A collaborative space where different ideas <br />connect, experiment,
         and grow ideas together.
       </>
     ),
@@ -186,8 +186,8 @@ const Workspace = () => {
             Curious what your next big idea looks like in the right space?
           </h2>
         </div>
-        <div id="workspace-title" className="mt-20 mb-20">
-          <h1 className="text-9xl lexend-deca-regular tracking-tighter">
+        <div id="workspace-title" className=" md:w-[60%] xl:w-full mt-10 xl:mt-20 mb-10 xl:mb-20">
+          <h1 className="text-4xl xl:text-8xl 2xl:text-9xl lexend-deca-regular tracking-tighter">
             <span>A</span> <span>Collaborative,</span> <span>Creative</span>{" "}
             <span>Innovation</span> <span>Space</span> <span>—</span>{" "}
             <span>for</span> <span>Makers</span> <span>and</span>{" "}
@@ -195,12 +195,12 @@ const Workspace = () => {
           </h1>
         </div>
       </div>
-      <div className="marquee_track flex flex-nowrap whitespace-nowrap will-change-transform mb-20">
+      <div className="marquee_track flex flex-nowrap whitespace-nowrap will-change-transform xl:mb-20">
         <div className="marquee_list flex whitespace-nowrap gap-5">
           {[...marqueeData, ...marqueeData].map((item, index) => (
             <div
               key={index}
-              className={`w-[32rem] h-[42rem] bg-red-400 relative rounded-lg overflow-hidden`}
+              className={`w-[24rem] h-[32rem] 2xl:w-[32rem] 2xl:h-[42rem] bg-red-400 relative rounded-lg overflow-hidden`}
             >
               <img
                 className="h-full w-full object-cover"
@@ -223,8 +223,8 @@ const Workspace = () => {
                     </p>
                   </div>
                 </div>
-                <div className=" flex">
-                  <h3 className="text-zinc-100 text-lg">{item.description}</h3>
+                <div className="flex flex-wrap px-2">
+                  <h3 className="text-zinc-100 text-sm lg:text-base 2xl:text-lg ">{item.description}</h3>
                 </div>
               </div>
             </div>
@@ -233,11 +233,11 @@ const Workspace = () => {
       </div>
       <div>
 
-        <div className="qeske-title p-7 mt-20">
-          <h2 className="text-7xl lexend-deca-regular tracking-tight text-black">
+        <div className="qeske-title p-7 mt-10 xl:mt-20">
+          <h2 className="text-3xl md:text-4xl xl:text-6xl 2xl:text-7xl lexend-deca-regular tracking-tight text-black">
             <span>Qeske</span> <span>Networks.</span>
           </h2>
-          <h2 className="text-7xl lexend-deca-regular mt-3 tracking-tighter text-black">
+          <h2 className="text-3xl md:text-4xl xl:text-6xl 2xl:text-7xl lexend-deca-regular mt-3 tracking-tighter text-black">
             <span>35+ Startups,</span><span>150+ Enterpreneurs.</span>
           </h2>
         </div>
@@ -247,13 +247,13 @@ const Workspace = () => {
             <div
              key={index} className="item_grid">
               <div className="icon_grid">
-                <h2 className="text-6xl">
+                <h2 className="text-5xl xl:text-6xl">
                   {item.icon}
                 </h2>
               </div>
-              <div className="flexbox_grid mt-20">
-                <div className="title text-2xl lexend-deca-semibold tracking-tight">{item.title}</div>
-                <div className="text-lg">{item.text}</div>
+              <div className="flexbox_grid mt-10 xl:mt-20">
+                <div className="title text-xl 2xl:text-2xl lexend-deca-semibold tracking-tight">{item.title}</div>
+                <div className="text-sm 2xl:text-lg">{item.text}</div>
               </div>
             </div>
           ))}

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Button from "./buttons/Button";
 import workspace from "/Images/workspace.jpg";
 import { FaLocationDot } from "react-icons/fa6";
@@ -12,6 +12,8 @@ const Location = () => {
   const titleRef = useRef();
   const scrollRef = useRef();
   const locationRef = useRef();
+  const [isMedium, setIsMedium] = useState(false);
+  const [isLarge, setIsLarge] = useState(false);
 
   const locations = [
     {
@@ -64,13 +66,36 @@ const Location = () => {
     });
   }, []);
 
+     useEffect(() => {
+      const handleResize = () => {
+        const width = window.innerWidth;
+        setIsMedium(width >= 768);
+        setIsLarge(width >= 1536);
+      };
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    const getCircleSize = () => {
+      if (isLarge) return "2.5rem";
+      if (isMedium) return "1.8rem";
+      return "1.8rem";
+    };
+  
+    const getTitleSize = ()=>{
+      if(isLarge) return "1.125rem";
+      if (isMedium) return "1rem";
+      return "1rem";
+    }
+
   return (
     <section
       ref={locationRef}
       id="location"
-      className="w-full h-screen bg-black flex overflow-hidden relative"
+      className="w-full h-screen bg-black flex xl:flex-row flex-col overflow-hidden relative"
     >
-      <div className="w-1/2 h-full relative overflow-hidden">
+      <div className="xl:w-1/2 w-full xl:h-full h-1/2 relative overflow-hidden">
         <div ref={scrollRef} className="absolute inset-0">
           <img
             src={workspace}
@@ -80,18 +105,18 @@ const Location = () => {
         </div>
       </div>
 
-      <div className="w-1/2 h-full flex flex-col justify-between p-7">
+      <div className="xl:w-1/2 w-full xl:h-full h-1/2 flex flex-col justify-between p-7">
         <div ref={titleRef} id="location-title">
-          <h2 className="text-white text-8xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl  lexend-deca-regular tracking-tighter">
             Anyone.
           </h2>
-          <h2 className="text-white text-8xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl lexend-deca-regular tracking-tighter">
             Anywhere.
           </h2>
         </div>
 
         <div>
-          <div className="w-full flex flex-wrap justify-center items-center">
+          <div className="w-full flex flex-wrap justify-center items-center gap-2">
             {locations.map((item, index) => (
               <a
                 key={index}
@@ -99,10 +124,10 @@ const Location = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="p-3">
-                  <div className="flex gap-2 items-center">
-                    <h2 className="text-white text-2xl">{item.icon}</h2>
-                    <h2 className="text-zinc-300 text-2xl lexend-deca-medium tracking-tighter">
+                <div className="md:p-3">
+                  <div className="flex gap-1 md:gap-2 items-center">
+                    <h2 className="text-white text-base lg:text-xl">{item.icon}</h2>
+                    <h2 className="text-zinc-300 text-base lg:text-xl lexend-deca-medium tracking-tighter">
                       {item.title}
                     </h2>
                   </div>
@@ -111,20 +136,20 @@ const Location = () => {
             ))}
           </div>
 
-          <div className="w-[80%] mt-10">
-            <h2 className="text-zinc-200 text-4xl tracking-tighter lexend-deca-light mb-5">
+          <div className=" w-full md:w-[80%] mt-5 md:mt-10">
+            <h2 className="text-zinc-200 text-lg md:text-xl lg:text-2xl 2xl:text-4xl tracking-tighter lexend-deca-light mb-5">
               Work shouldn’t be limited by access, background, or geography.
               Space to grow should belong to you.
             </h2>
             <Button
               width="w-48"
               title="Get in touch"
-              titleSize="1.125rem"
+              titleSize={getTitleSize()}
               bodyColor="bg-white"
               bodyText="text-black"
               circleColor="bg-[#000]"
               circleText="text-white"
-              circleSize="2.5rem" 
+              circleSize={getCircleSize()} 
               href="mailto:community@qeskemaastricht.nl"
             />           
           </div>

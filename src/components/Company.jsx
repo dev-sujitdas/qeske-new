@@ -18,6 +18,8 @@ const Company = () => {
   const cursorRef = useRef(null);
   const followerRef = useRef(null);
   const [isPlay, setIsPlay] = useState(null);
+  const [isMedium, setIsMedium] = useState(false);
+  const [isLarge, setIsLarge] = useState(false);
 
   const gridItems = [
     {
@@ -135,24 +137,42 @@ const Company = () => {
     return () => ctx.revert();
   });
 
-
-
-
-
+    useEffect(() => {
+      const handleResize = () => {
+        const width = window.innerWidth;
+        setIsMedium(width >= 768);
+        setIsLarge(width >= 1536);
+      };
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    const getCircleSize = () => {
+      if (isLarge) return "2.5rem";
+      if (isMedium) return "1.8rem";
+      return "1.5rem";
+    };
+  
+    const getTitleSize = ()=>{
+      if(isLarge) return "1.125rem";
+      if (isMedium) return "0.9rem";
+      return "0.9rem";
+    }
 
   return (
     <section id="company" className="w-full">
-      <div className="p-7 w-full flex flex-col justify-center items-center mt-25">
+      <div className="p-7 w-full flex flex-col justify-center items-center mt-10 md:mt-20 lg:mt-25">
         <div ref={titleRef} id="company-title" className="text-center">
-          <h2 className="text-black text-8xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black md:text-6xl lg:text-7xl xl:text-8xl text-4xl lexend-deca-regular tracking-tighter">
             <span>Your</span> <span>Creative</span> <span>Launch</span>
           </h2>
-          <h2 className="text-black text-8xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black md:text-6xl lg:text-7xl xl:text-8xl text-4xl lexend-deca-regular tracking-tighter">
             <span>Space</span>
           </h2>
         </div>
         <div className="flex justify-center items-center mt-10">
-          <h3 className="text-center text-xl">
+          <h3 className="text-center text-lg md:text-xl">
             Qeske brings creators, entrepreneurs, and innovators under one roof{" "}
             <br />— with flexible workspaces, vibrant communities, and
             opportunities to grow.
@@ -160,8 +180,8 @@ const Company = () => {
         </div>
       </div>
    
-      <div className="w-full flex justify-center items-center mt-20">
-        <div className="video-container h-[40rem] w-[60%] rounded-xl overflow-hidden relative" ref={containerRef}>
+      <div className="w-full flex justify-center items-center mt-10 md:mt-20 p-5 md:p-0">
+        <div className="video-container h-[18rem] w-full md:h-[25rem] md:w-[80%] lg:h-[30rem] xl:h-[32rem] 2xl:h-[40rem] xl:w-[60%] rounded-xl overflow-hidden relative" ref={containerRef}>
           <video
             ref={videoRef}
             src="https://www.qeskemaastricht.nl/qeske%2dmaastricht%2dpromo.mp4"
@@ -179,15 +199,15 @@ const Company = () => {
       </div>
 
       <div className="w-full">
-        <div ref={title2Ref} className="company-title2 p-7 mt-20">
-          <h2 className="text-7xl lexend-deca-regular tracking-tight">
+        <div ref={title2Ref} className="company-title2 p-7 mt-10 md:mt-20">
+          <h2 className="text-3xl  md:text-5xl lg:text-6xl xl:text-7xl lexend-deca-regular tracking-tight">
             <span>Creative</span> <span>Forces</span>
           </h2>
-          <h2 className="text-7xl lexend-deca-regular mt-3 tracking-tighter leading-10">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl lexend-deca-regular mt-3 tracking-tighter leading-5 md:leading-10">
             <span>Within</span> <span>Our</span> <span>Network.</span>
           </h2>
           <div>
-            <h3 className="text-lg lexend-deca-regular mt-7 w-[25rem]">
+            <h3 className="text-lg lexend-deca-regular mt-7 w-[20rem] md:w-[25rem]">
               Participating Companies, Startups, Studios & Visionaries Growing
               at Qeske.
             </h3>
@@ -198,22 +218,23 @@ const Company = () => {
           {gridItems.map((item, index) => (
             <div key={index} className="item_grid">
               <div className="icon_grid flex justify-center items-center">
-                <img className="h-24 w-fit" src={item.logo} alt="" />
+                <img className="h-20 lg:h-20 2xl:h-24 w-fit" src={item.logo} alt="" />
               </div>
               <div className="flexbox_grid mt-10">
-                <div className="title text-2xl lexend-deca-semibold tracking-tight">
+                <div className="title text-xl 2xl:text-2xl lexend-deca-semibold tracking-tight">
                   {item.title}
                 </div>
-                <div className="text-lg">{item.description}</div>
+                <div className="text-sm 2xl:text-lg">{item.description}</div>
                 <div className="mt-2">
                   <Button
                     width="w-42"
                     title="Know more"
+                    titleSize={getTitleSize()}
                     bodyColor="bg-black"
                     bodyText="text-white"
                     circleColor="bg-white"
                     circleText="text-black"
-                    circleSize="2rem"
+                    circleSize={getCircleSize()}
                     href={item.href}
                   />
                 </div>

@@ -23,7 +23,7 @@ const Footer = () => {
                         </h3>
                     </div>
                 </div>
-                <div className="lg:w-1/2 w-full p-5 flex lg:flex-row flex-col gap-30 justify-end z-10">
+                <div className="lg:w-1/2 w-full p-5 flex lg:flex-row flex-col gap-10 lg:gap-30 justify-end z-10">
                     <div className="">
                         <h2 className="text-white lexend-deca-semibold text-lg mb-4 uppercase">How we help</h2>
                         <div>
