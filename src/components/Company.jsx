@@ -42,7 +42,7 @@ const Company = () => {
       href: "https://www.flokotattoo.com/",
       title: "Folko Tattoo",
       description: "Floko Tattoo is a private tattoo studio.",
-      logo: "https://lh3.googleusercontent.com/Pn2j-EzirX-febdSsoLr7Knn30IpB6wA59oN7-odM0BlgWzIGMIcdi1oqtVR1O4roKDNgdUhvMGKjf9BMkbfSbhf4vGFPgcEHdt-Oje1YDSKaPWakRLFNtlHRktO94kDIQ6PRn_LgVY=w16383",
+      logo: folko,
     },
     {
       href: "https://denimx.nl/",
