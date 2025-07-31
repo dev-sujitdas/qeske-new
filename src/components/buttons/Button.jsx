@@ -1,16 +1,19 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { FiArrowUpRight, FiArrowDownLeft } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Button = ({
   width,
   title,
+  titleSize,
   textColor,
   bodyColor,
   circleColor,
   bodyText,
   circleText,
+  circleSize,
+  onClick,
   index,
   href
 }) => {
@@ -63,15 +66,16 @@ const Button = ({
     <>
     <a href={href} target="_blank" key={index}>
       <button
+      onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`p-1 ${bodyColor} rounded-full ${width} flex items-center justify-between cursor-pointer`}      
     >
-      <h2 className={`${bodyText} pl-4 font-semibold text-lg`}>{title}</h2>
+      <h2 className={`${bodyText} pl-4 font-semibold`} style={{ fontSize: titleSize }}>{title}</h2>
 
       <div
-        className={`${circleColor} circle h-10 w-10 relative flex justify-center items-center rounded-full ${textColor} overflow-hidden`}
-      >        
+        className={`${circleColor} circle relative flex justify-center items-center rounded-full ${textColor} overflow-hidden`}
+      style={{ height: circleSize, width: circleSize }}>        
         <span
           ref={icon1Ref}
           className={`absolute w-full h-full flex items-center justify-center text-lg ${circleText}`}

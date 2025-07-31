@@ -16,12 +16,14 @@ const Navbar = () => {
           <Button
             width="w-48"
             title="Get in touch"
+            titleSize="1.125rem"
             text="text-black"
             bodyColor="bg-black"
             bodyText="text-white"
             circleColor="bg-[#f1f1f1]"
+            circleSize="2.5rem"          
             href="mailto:community@qeskemaastricht.nl"
-          />
+          />         
         </div>
       </div>
     </nav>

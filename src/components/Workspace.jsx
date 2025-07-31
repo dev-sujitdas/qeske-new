@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import icon from "/Images/icon_shape.png";
@@ -153,13 +153,13 @@ const gridItems = [
   },
 ];
 
-const Spec = () => {
+const Workspace = () => {
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
-      gsap.from("#spec-title h1 span", {
+      gsap.from("#workspace-title h1 span", {
         scrollTrigger: {
-          trigger: "#spec",
+          trigger: "#workspace",
           start: "top 85%",
           end: "top 50%",
         },
@@ -168,27 +168,15 @@ const Spec = () => {
         stagger: 0.05,
         duration: 0.5,
         ease: "power3.out",
-      });
-
-      gsap.from(".qeske-title h2 span", {
-        scrollTrigger: {
-          trigger: ".qeske-title",
-          start: "top 85%",
-          end: "top 50%",
-        },
-        y: 100,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 0.5,
-        ease: "power3.out",
-      });
+      });    
     });
     
     return () => ctx.revert();
   }, []);
 
+
   return (
-    <section id="spec" className="w-full ">
+    <section id="workspace" className="w-full ">
       <div className="p-7">
         <div className="w-full flex gap-5 items-center mt-4">
           <h2 className="h-8 w-8">
@@ -198,7 +186,7 @@ const Spec = () => {
             Curious what your next big idea looks like in the right space?
           </h2>
         </div>
-        <div id="spec-title" className="mt-20 mb-20">
+        <div id="workspace-title" className="mt-20 mb-20">
           <h1 className="text-9xl lexend-deca-regular tracking-tighter">
             <span>A</span> <span>Collaborative,</span> <span>Creative</span>{" "}
             <span>Innovation</span> <span>Space</span> <span>—</span>{" "}
@@ -246,10 +234,10 @@ const Spec = () => {
       <div>
 
         <div className="qeske-title p-7 mt-20">
-          <h2 className="text-7xl lexend-deca-regular">
+          <h2 className="text-7xl lexend-deca-regular tracking-tight text-black">
             <span>Qeske</span> <span>Networks.</span>
           </h2>
-          <h2 className="text-7xl lexend-deca-regular mt-3">
+          <h2 className="text-7xl lexend-deca-regular mt-3 tracking-tighter text-black">
             <span>35+ Startups,</span><span>150+ Enterpreneurs.</span>
           </h2>
         </div>
@@ -263,8 +251,8 @@ const Spec = () => {
                   {item.icon}
                 </h2>
               </div>
-              <div className="flexbox_grid mt-28">
-                <div className="title text-2xl lexend-deca-semibold">{item.title}</div>
+              <div className="flexbox_grid mt-20">
+                <div className="title text-2xl lexend-deca-semibold tracking-tight">{item.title}</div>
                 <div className="text-lg">{item.text}</div>
               </div>
             </div>
@@ -275,4 +263,4 @@ const Spec = () => {
   );
 };
 
-export default Spec;
+export default Workspace;

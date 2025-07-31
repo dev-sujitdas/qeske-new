@@ -69,11 +69,11 @@ const Hero = () => {
         src={heroVideo}
       ></video>
       <div className="w-full h-full absolute top-0 left-0 p-7 flex flex-col justify-between">
-        <div  id="hero-title" className="w-full h-fit mt-24 ">
-          <div className="lexend-deca-regular text-8xl text-[#f1f1f1] h-[7rem] overflow-hidden">
+        <div  id="hero-title" className="w-full h-fit 2xl:mt-24 ">
+          <div className="lexend-deca-regular text-8xl  text-[#f1f1f1] h-[7rem] overflow-hidden tracking-tighter">
             <h1>Workspace.</h1>
           </div>
-          <div className="lexend-deca-regular text-8xl text-[#f1f1f1] h-[7rem] flex gap-5  overflow-hidden">
+          <div className="lexend-deca-regular text-8xl text-[#f1f1f1] h-[7rem] flex gap-5  overflow-hidden tracking-tighter">
             <h1>Designed To Inspire</h1>
           </div>
         </div>
@@ -95,19 +95,21 @@ const Hero = () => {
           </div>
 
           <div className="w-1/2 flex flex-col justify-end gap-5">
-            <h2 className="lexend-deca-regular text-[#f1f1f1] flex flex-col text-6xl">
+            <h2 className="lexend-deca-regular text-[#f1f1f1] flex flex-col text-6xl tracking-tighter">
               <span>You bring the vision</span>
               <span>— Qeske create the space.</span>
             </h2>
             <Button
-              width="w-48"
-              title="Get in touch"
-              bodyColor="bg-white"
-              bodyText="text-black"
-              circleColor="bg-[#000]"
-              circleText="text-white"
-              href="mailto:community@qeskemaastricht.nl"
-            />
+            width="w-48"
+            title="Get in touch"
+            titleSize="1.125rem"
+            text="text-black"
+            bodyColor="bg-black"
+            bodyText="text-white"
+            circleColor="bg-[#f1f1f1]"
+            circleSize="2.5rem"          
+            href="mailto:community@qeskemaastricht.nl"
+          /> 
           </div>
         </div>
       </div>
