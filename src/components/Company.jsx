@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Button from "./buttons/Button";
 import denim from "/Images/logo-denimx-white.jpg";
+import folko from "/Images/logo ff.png"
 import { FaPlay } from "react-icons/fa6";
 import { IoMdPause } from "react-icons/io";
 import ScrollTrigger from "gsap/ScrollTrigger";
