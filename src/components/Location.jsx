@@ -35,7 +35,7 @@ const Location = () => {
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
-      gsap.from(titleRef.current.querySelectorAll("h2"), {
+      gsap.from(titleRef.current.querySelectorAll("h2 span"), {
         scrollTrigger: {
           trigger: "#location",
           start: "top 85%",
@@ -107,11 +107,11 @@ const Location = () => {
 
       <div className="xl:w-1/2 w-full xl:h-full h-1/2 flex flex-col justify-between p-7">
         <div ref={titleRef} id="location-title">
-          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl  lexend-deca-regular tracking-tighter">
-            Anyone.
+          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl 2xl:h-[6.5rem] overflow-hidden lexend-deca-regular tracking-tighter">
+             <span>Anyone.</span>
           </h2>
-          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl lexend-deca-regular tracking-tighter">
-            Anywhere.
+          <h2 className="text-white @max-xs:text-3xl text-4xl  md:text-5xl lg:text-7xl 2xl:text-8xl 2xl:h-[6.5rem] overflow-hidden lexend-deca-regular tracking-tighter">
+             <span>Anywhere.</span>
           </h2>
         </div>
 

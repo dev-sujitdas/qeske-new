@@ -93,10 +93,10 @@ const Contact = () => {
 
       <div className="w-full lg:w-1/2 p-7">
         <div ref={titleRef} id="contact-title" className="">
-          <h2 className="text-black text-2xl md:text-3xl xl:text-5xl 2xl:text-7xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black text-2xl h-[2rem] md:text-3xl md:h-[2.5rem] xl:text-5xl xl:h-[3.5rem] 2xl:text-7xl 2xl:h-[5rem] overflow-hidden lexend-deca-regular tracking-tighter">
             <span>Let's</span> <span>Build</span>
           </h2>
-          <h2 className="text-black text-2xl md:text-3xl xl:text-5xl 2xl:text-7xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black text-2xl h-[2rem] md:text-3xl md:h-[2.5rem] xl:text-5xl xl:h-[3.5rem] 2xl:text-7xl 2xl:h-[5rem] overflow-hidden lexend-deca-regular tracking-tighter">
             <span>Something</span> <span>Together</span>
           </h2>
         </div>

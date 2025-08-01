@@ -164,10 +164,10 @@ const Company = () => {
     <section id="company" className="w-full">
       <div className="p-7 w-full flex flex-col justify-center items-center mt-10 md:mt-20 lg:mt-25">
         <div ref={titleRef} id="company-title" className="text-center">
-          <h2 className="text-black md:text-6xl lg:text-7xl xl:text-8xl text-4xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black text-4xl h-[3.2rem] md:text-6xl md:h-[4.5rem] lg:text-7xl lg:h-[5rem] xl:text-8xl xl:h-[6.5rem] overflow-hidden  lexend-deca-regular tracking-tighter">
             <span>Your</span> <span>Creative</span> <span>Launch</span>
           </h2>
-          <h2 className="text-black md:text-6xl lg:text-7xl xl:text-8xl text-4xl lexend-deca-regular tracking-tighter">
+          <h2 className="text-black text-4xl h-[3.2rem] md:text-6xl md:h-[4.5rem] lg:text-7xl lg:h-[5rem] xl:text-8xl xl:h-[6.5rem] overflow-hidden lexend-deca-regular tracking-tighter">
             <span>Space</span>
           </h2>
         </div>
