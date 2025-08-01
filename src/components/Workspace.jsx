@@ -237,7 +237,7 @@ const Workspace = () => {
           <h2 className="text-3xl md:text-4xl xl:text-6xl 2xl:text-7xl lexend-deca-regular tracking-tight text-black">
             <span>Qeske</span> <span>Networks.</span>
           </h2>
-          <h2 className="text-3xl md:text-4xl xl:text-6xl 2xl:text-7xl lexend-deca-regular mt-3 tracking-tighter text-black">
+          <h2 className="text-3xl md:text-4xl xl:text-6xl 2xl:text-7xl lexend-deca-regular mt-3 tracking-tighter text-black leading-10">
             <span>35+ Startups,</span><span>150+ Enterpreneurs.</span>
           </h2>
         </div>
