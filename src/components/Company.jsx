@@ -218,7 +218,7 @@ const Company = () => {
           {gridItems.map((item, index) => (
             <div key={index} className="item_grid">
               <div className="icon_grid flex justify-center items-center">
-                <img className="h-20 lg:h-20 2xl:h-24 w-fit" src={item.logo} alt="" />
+                <img className="h-20 lg:h-20 2xl:h-24 w-auto object-contain" src={item.logo} alt="" />
               </div>
               <div className="flexbox_grid mt-10">
                 <div className="title text-xl 2xl:text-2xl lexend-deca-semibold tracking-tight">

@@ -100,7 +100,7 @@ const Hero = () => {
         loop
         src={heroVideo}
       ></video>
-      <div className="w-full h-full absolute top-0 left-0 p-7 flex flex-col justify-between bg-[#0000007c]">
+      <div className="w-full h-full absolute top-0 left-0 p-7 flex flex-col justify-between bg-[#0000007c] backdrop-blur-xs">
         <div  id="hero-title" className="w-full h-fit mt-20 lg:mt-20 2xl:mt-24 ">
           <div className="lexend-deca-regular text-6xl lg:text-7xl 2xl:text-8xl text-[#f1f1f1] xl:h-[5rem] 2xl:h-[7rem] overflow-hidden tracking-tighter">
             <h1>Workspace.</h1>
