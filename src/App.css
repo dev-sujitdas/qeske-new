@@ -177,8 +177,7 @@
 }
 
 .video-container {
-  cursor: none;
-  background-image: url(/Images/vidbg.png);
+  cursor: none;  
   background-repeat: no-repeat;
   background-size: cover;
 }
