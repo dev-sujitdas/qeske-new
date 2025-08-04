@@ -142,15 +142,15 @@ const Location = () => {
               Space to grow should belong to you.
             </h2>
             <Button
-              width="w-48"
-              title="Get in touch"
+              width={isLarge ? "w-70" : "w-64"}
+              title="Book a meeting or event"
               titleSize={getTitleSize()}
               bodyColor="bg-white"
               bodyText="text-black"
               circleColor="bg-[#000]"
               circleText="text-white"
               circleSize={getCircleSize()} 
-              href="mailto:community@qeskemaastricht.nl"
+              href="https://www.supersaas.nl/schedule/qeskemaastricht/Qeske_facilities?view=month"
             />           
           </div>
         </div>
